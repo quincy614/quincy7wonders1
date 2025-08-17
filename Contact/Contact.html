@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - 7 Wonders PH</title>
+  <link rel="stylesheet" href="../General/General.css" />
+  <link rel="stylesheet" href="../General/navigation.css" />
+  <link rel="stylesheet" href="./Contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="../General/General.js" defer></script>
+  <link rel="icon" href="./contact_icon-icons.com_64661.ico" type="image/x-icon">
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+</head>
+<body>
+    <div class="modalsidebar"></div>
+    <header>
+        <nav>
+              <div class="menu-toggle">☰</div>
+            <div class="icon1">
+                <div class="icon1">7 Wonders PH</div>
+            </div>
+            <ul>
+                <li><a href="../Home/Home.html">Home</a></li>
+                <li><a href="../About/About.html">About</a></li>
+                <li><a href="../Gallery/Gallery.html">Gallery</a></li>
+                <li><a href="../Contact/Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+		<h4>Home</h4>
+        <a href="#">Home</a>
+        <hr>
+        <h4>About</h4>
+        <a href="#">Banaue Rice Terraces</a>
+        <a href="#">Chocolate Hills</a>
+        <a href="#">Puerto Princesa Underground River</a>
+        <a href="#">Mayon Volcano</a>
+        <a href="#">Tubbataha Reefs Natural Park</a>
+        <a href="#">Boracay</a>
+        <a href="#">Taal Volcano</a>
+        <hr>
+        <h4>Gallery</h4>
+        <a href="#">Banaue Rice Terraces</a>
+        <a href="#">Chocolate Hills</a>
+        <a href="#">Puerto Princesa Underground River</a>
+        <a href="#">Mayon Volcano</a>
+        <a href="#">Tubbataha Reefs Natural Park</a>
+        <a href="#">Boracay</a>
+        <a href="#">Taal Volcano</a>
+        <hr>
+        <h4>Contact</h4>
+        <a href="#">Contact Information</a>
+        <a href="#">Map</a>
+    </div>
+
+	<section class="home">
+    <div class="scrolltotop">
+			<i class="fa-solid fa-arrow-up"></i>
+		</div>
+        <div class="unabletotouch">
+            <h1> Send a Message</h1>
+		<form
+            action="https://formspree.io/f/xrbqndpg"
+            method="POST"
+            >
+            <label>
+                Your name:
+                <input type="text">
+            </label>
+            <label>
+                Your email:
+                <input type="email" name="email">
+            </label>
+            <label>
+                Your message:
+                <textarea name="message"></textarea>
+            </label>
+            <!-- your other form fields go here -->
+            <button type="submit">Send</button>
+        </form>
+        </div>
+
+        <div class="icons">
+		<a href="https://www.facebook.com/search/top/?q=quincy%20lorenz" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/qodones09/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@quincylorenzodones4689" target="_blank"><i class="fab fa-youtube"></i></a>
+	</div>
+	</section>
+
+  <div class="cards">
+  <div class="card" onclick="showLocation('BanaueRiceTerraces')">
+    <h3>Banaue Rice Terraces</h3>
+    <p>Banaue, Ifugao, Luzon</p>
+    <p>UNESCO World Heritage Site, ancient hand-carved terraces</p>
+  </div>
+  <div class="card" onclick="showLocation('ChocolateHills')">
+    <h3>Chocolate Hills</h3>
+    <p>Bohol, Visayas</p>
+    <p>Over 1,200 symmetrical hills, green in wet season, brown in dry</p>
+  </div>
+  <div class="card" onclick="showLocation('PuertoPrincesaUndergroundRiver')">
+    <h3>Puerto Princesa Underground River</h3>
+    <p>Palawan</p>
+    <p>Subterranean river and cave system, UNESCO World Heritage Site</p>
+  </div>
+  <div class="card" onclick="showLocation('TubbatahaReefs')">
+    <h3>Tubbataha Reefs Natural Park</h3>
+    <p>Sulu Sea</p>
+    <p>Marine biodiversity hotspot, UNESCO World Heritage Site</p>
+  </div>
+  <div class="card" onclick="showLocation('MayonVolcano')">
+    <h3>Mayon Volcano</h3>
+    <p>Albay, Bicol Region</p>
+    <p>Perfect cone-shaped volcano, active and scenic</p>
+  </div>
+  <div class="card" onclick="showLocation('TaalVolcano')">
+    <h3>Taal Volcano</h3>
+    <p>Batangas, Luzon</p>
+    <p>Volcano within a lake, within a volcano, popular tourist spot</p>
+  </div>
+  <div class="card" onclick="showLocation('Boracay')">
+    <h3>Boracay Island</h3>
+    <p>Aklan, Visayas</p>
+    <p>Famous for white sand beaches and vibrant nightlife</p>
+  </div>
+</div>
+
+    <div id="map" style="height:400px;width:100%; border-radius:10px;z-index:1;">
+      <div style="margin-bottom:10px; display: flex; justify-content: center; gap: 10px; margin-top: 50px;" class="buttonsmap"> 
+  <button id="btnTerrain">Terrain</button>
+  <button id="btnSatellite">Satellite</button>
+  <button id="btnHybrid">Hybrid</button>
+  <button id="btnStreets">Streets</button>
+</div>
+    </div>
+
+    <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>Home</h4>
+  	 			<ul>
+  	 				<li><a href="../Home/Home.html">Home</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>About</h4>
+  	 			<ul>
+  	 				<li><a href="#">Banaue Rice Terraces</a></li>
+  	 				<li><a href="#"> Puerto Princesa Subterranean River</a></li>
+  	 				<li><a href="#">Tubbataha Reefs Natural Park</a></li>
+  	 				<li><a href="#">Chocolate Hills</a></li>
+            <li><a href="#">Mayon Volcano</a></li>
+            <li><a href="#">Taal Volcano and Lake</a></li>
+            <li><a href="#">Boracay Island</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Gallery</h4>
+  	 			<ul>
+  	 				<li><a href="#">Banaue Rice Terraces</a></li>
+  	 				<li><a href="#"> Puerto Princesa Subterranean River</a></li>
+  	 				<li><a href="#">Tubbataha Reefs Natural Park</a></li>
+  	 				<li><a href="#">Chocolate Hills</a></li>
+            <li><a href="#">Mayon Volcano</a></li>
+            <li><a href="#">Taal Volcano and Lake</a></li>
+            <li><a href="#">Boracay Island</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Contacts</h4>
+  	 			<div class="social-links">
+  	 				<a href="https://www.facebook.com/search/top/?q=quincy%20lorenz" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/qodones09/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@quincylorenzodones4689" target="_blank"><i class="fab fa-youtube"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      
+      const locations = {
+  BanaueRiceTerraces: {
+    coords: [16.9186, 121.0583],
+    popup: `Banaue Rice Terraces<br>Luzon<br>
+      <a href="https://maps.app.goo.gl/Jyz1fGMs7o1kudVY8" target="_blank">View in Google Maps</a>`
+  },
+  ChocolateHills: {
+    coords: [9.8550, 124.1435],
+    popup: `Chocolate Hills<br>Bohol<br>
+      <a href="https://maps.app.goo.gl/yXhax3eq1JGYw8mr7" target="_blank">View in Google Maps</a>`
+  },
+  PuertoPrincesaUndergroundRiver: {
+    coords: [10.1960, 118.9262],
+    popup: `Puerto Princesa Underground River<br>Palawan<br>
+      <a href="https://maps.app.goo.gl/TCPZKUh1vE1zX1Et8" target="_blank">View in Google Maps</a>`
+  },
+  TubbatahaReefs: {
+    coords: [8.9518, 119.9010],
+    popup: `Tubbataha Reefs Natural Park<br>Sulu Sea<br>
+      <a href="https://maps.app.goo.gl/5w2a4zV45wtoeyv16" target="_blank">View in Google Maps</a>`
+  },
+  MayonVolcano: {
+    coords: [13.2574, 123.6856],
+    popup: `Mayon Volcano<br>Albay<br>
+      <a href="https://maps.app.goo.gl/2rKStchTbvJxJn4r9" target="_blank">View in Google Maps</a>`
+  },
+  TaalVolcano: {
+    coords: [14.0008, 120.9970],
+    popup: `Taal Volcano<br>Batangas<br>
+      <a href="https://maps.app.goo.gl/PpKzjmBkQKdMHzLF8" target="_blank">View in Google Maps</a>`
+  },
+  Boracay: {
+    coords: [11.9674, 121.9248],
+    popup: `Boracay Island<br>Aklan<br>
+      <a href="https://maps.app.goo.gl/CyfiGr1uxdHq1AUN6" target="_blank">View in Google Maps</a>`
+  }
+};
+
+const map = L.map('map').setView([12.8797, 121.7740], 5);
+
+const googleTerrain = L.tileLayer('http://{s}.google.com/vt?lyrs=p&x={x}&y={y}&z={z}', {
+  maxZoom: 20,
+  subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+});
+const googleSat = L.tileLayer('http://{s}.google.com/vt?lyrs=s&x={x}&y={y}&z={z}', {
+  maxZoom: 20,
+  subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+});
+const googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+  maxZoom: 20,
+  subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+});
+const googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+  maxZoom: 20,
+  subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+});
+const googleTraffic = L.tileLayer('http://{s}.google.com/vt?lyrs=h@190112267&style=15,37|smartmaps|traffic&x={x}&y={y}&z={z}', {
+    maxZoom: 20,
+    subdomains: ['mt0','mt1','mt2','mt3']
+});
+
+let currentLayer = googleTerrain;
+currentLayer.addTo(map);
+
+function switchLayer(newLayer) {
+  if (map.hasLayer(currentLayer)) {
+    map.removeLayer(currentLayer);
+  }
+  newLayer.addTo(map);
+  currentLayer = newLayer;
+}
+
+document.getElementById('btnTerrain').addEventListener('click', function() {
+  switchLayer(googleTerrain);
+});
+document.getElementById('btnSatellite').addEventListener('click', function() {
+  switchLayer(googleSat);
+});
+document.getElementById('btnHybrid').addEventListener('click', function() {
+  switchLayer(googleHybrid);
+});
+document.getElementById('btnStreets').addEventListener('click', function() {
+  switchLayer(googleStreets);
+});
+
+
+const markers = {};
+for (const key in locations) {
+  const loc = locations[key];
+  markers[key] = L.marker(loc.coords).addTo(map).bindPopup(loc.popup);
+}
+
+function showLocation(key) {
+  const loc = locations[key];
+  map.setView(loc.coords, 13);
+  markers[key].openPopup();
+}
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Add the "visible" class to trigger animation when in view
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.5 // Trigger when 50% of the element is in view
+    });
+
+    // Select all elements you want to observe
+    const elements = document.querySelectorAll('.icons');
+
+    // Observe each element
+    elements.forEach(element => {
+      observer.observe(element);
+    });
+// <-- This closes the DOMContentLoaded function
+</script>
+</body>
+</html>

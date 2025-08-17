@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - 7 Wonders PH</title>
+  <link rel="stylesheet" href="../General/General.css" />
+  <link rel="stylesheet" href="../General/navigation.css" />
+  <link rel="stylesheet" href="./Gallery.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="../General/General.js" defer></script>
+  <link rel="icon" href="./frame_gallery_image_images_photo_picture_pictures_icon_123209.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="modalsidebar"></div>
+    <header>
+        <nav>
+              <div class="menu-toggle">☰</div>
+            <div class="icon1">
+                <div class="icon1">7 Wonders PH</div>
+            </div>
+            <ul>
+                <li><a href="../Home/Home.html">Home</a></li>
+                <li><a href="../About/About.html">About</a></li>
+                <li><a href="../Gallery/Gallery.html">Gallery</a></li>
+                <li><a href="../Contact/Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+		<h4>Home</h4>
+        <a href="#">Home</a>
+        <hr>
+        <h4>About</h4>
+        <a href="#">Banaue Rice Terraces</a>
+        <a href="#">Chocolate Hills</a>
+        <a href="#">Puerto Princesa Underground River</a>
+        <a href="#">Mayon Volcano</a>
+        <a href="#">Tubbataha Reefs Natural Park</a>
+        <a href="#">Boracay</a>
+        <a href="#">Taal Volcano</a>
+        <hr>
+        <h4>Gallery</h4>
+        <a href="#">Banaue Rice Terraces</a>
+        <a href="#">Chocolate Hills</a>
+        <a href="#">Puerto Princesa Underground River</a>
+        <a href="#">Mayon Volcano</a>
+        <a href="#">Tubbataha Reefs Natural Park</a>
+        <a href="#">Boracay</a>
+        <a href="#">Taal Volcano</a>
+        <hr>
+        <h4>Contact</h4>
+        <a href="#">Contact Information</a>
+        <a href="#">Map</a>
+    </div>
+
+	<section class="home">
+		<div class="gallerycontainer">
+
+  <div class="wondercontainer">
+    <div class="wonders" data-wonder="banaue">Banaue Rice Terraces</div>
+    <div class="wonders" data-wonder="chocolate">Chocolate Hills</div>
+    <div class="wonders" data-wonder="puerto">Puerto Princesa</div>
+    <div class="wonders" data-wonder="mayon">Mayon Volcano</div>
+    <div class="wonders" data-wonder="taal">Taal Volcano</div>
+    <div class="wonders" data-wonder="tubbataha">Tubbataha Reefs Natural Park</div>
+    <div class="wonders" data-wonder="boracay">Boracay Beach</div>
+  </div>
+
+  <!-- Images for selected wonder appear here -->
+  <div class="imagegallery"></div>
+
+    </div>
+
+  <div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img id="modalImg" class="modal-content" />
+  <button id="prevBtn" class="nav-btn">⟨</button>
+  <button id="nextBtn" class="nav-btn">⟩</button>
+</div>
+	</section>
+
+	</div>
+
+    <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>Home</h4>
+  	 			<ul>
+  	 				<li><a href="../Home/Home.html">Home</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>About</h4>
+  	 			<ul>
+  	 				<li><a href="#">Banaue Rice Terraces</a></li>
+  	 				<li><a href="#"> Puerto Princesa Subterranean River</a></li>
+  	 				<li><a href="#">Tubbataha Reefs Natural Park</a></li>
+  	 				<li><a href="#">Chocolate Hills</a></li>
+            <li><a href="#">Mayon Volcano</a></li>
+            <li><a href="#">Taal Volcano and Lake</a></li>
+            <li><a href="#">Boracay Island</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Gallery</h4>
+  	 			<ul>
+  	 				<li><a href="#">Banaue Rice Terraces</a></li>
+  	 				<li><a href="#"> Puerto Princesa Subterranean River</a></li>
+  	 				<li><a href="#">Tubbataha Reefs Natural Park</a></li>
+  	 				<li><a href="#">Chocolate Hills</a></li>
+            <li><a href="#">Mayon Volcano</a></li>
+            <li><a href="#">Taal Volcano and Lake</a></li>
+            <li><a href="#">Boracay Island</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Contacts</h4> 
+  	 			<div class="social-links">
+  	 				<a href="https://www.facebook.com/quincy.lorenz.odones.2025" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://www.instagram.com/qodones09/" target="_blank"><i class="fab fa-instagram"></i></a>
+  	 				<a href="https://www.youtube.com/@quincylorenzodones4689" target="_blank"><i class="fab fa-youtube"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const wonders = document.querySelectorAll(".wonders");
+  const gallery = document.querySelector(".imagegallery");
+
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.querySelector(".close");
+
+  const wonderImages = {
+    banaue: [
+      '../Images/BanaueRice.jpg',
+      '../Images/BanaueRice1.jpg',
+      '../Images/BanaueRice2.jpg',
+      '../Images/BanaueRice3.jpg',
+      '../Images/BanaueRice4.jpg',
+      '../Images/BanaueRice5.jpg',
+      '../Images/BanaueRice6.jpg',
+      '../Images/BanaueRice7.jpg',
+      '../Images/BanaueRice8.jpg',
+      '../Images/BanaueRice9.jpg',
+      '../Images/BanaueRice10.jpg'
+    ],
+    chocolate: [
+      '../Images/ChocolateHills.jpg',
+      '../Images/ChocolateHills1.jpg',
+      '../Images/ChocolateHills2.jpg',
+      '../Images/ChocolateHills3.jpg',
+      '../Images/ChocolateHills4.jpg',
+      '../Images/ChocolateHills5.jpg',
+      '../Images/ChocolateHills6.jpg',
+      '../Images/ChocolateHills7.jpg',
+      '../Images/ChocolateHills8.jpg',
+      '../Images/ChocolateHills9.jpg',
+      '../Images/ChocolateHills10.jpg'
+    ],
+    puerto: [
+      '../Images/puerto.jpg',
+      '../Images/puerto1.jpg',
+      '../Images/puerto2.jpg',
+      '../Images/puerto3.jpg',
+      '../Images/puerto4.jpg',
+      '../Images/puerto5.jpg',
+      '../Images/puerto6.jpg',
+      '../Images/puerto7.jpg',
+      '../Images/puerto8.jpg',
+      '../Images/puerto9.jpg',
+      '../Images/puerto10.jpg',
+    ],
+    mayon: [
+      '../Images/mayon volcano.jpg',
+      '../Images/mayon volcano1.jpg',
+      '../Images/mayon volcano2.jpg',
+      '../Images/mayon volcano3.jpg',
+      '../Images/mayon volcano4.jpg',
+      '../Images/mayon volcano5.jpg',
+      '../Images/mayon volcano6.jpg',
+      '../Images/mayon volcano7.jpg',
+      '../Images/mayon volcano8.jpg',
+      '../Images/mayon volcano9.jpg',
+      '../Images/mayon volcano10.jpg',
+    ],
+    taal: [
+      '../Images/TaalVolcano.jpg',
+      '../Images/TaalVolcano1.jpg',
+      '../Images/TaalVolcano2.jpg',
+      '../Images/TaalVolcano3.jpg',
+      '../Images/TaalVolcano4.jpg',
+      '../Images/TaalVolcano5.jpg',
+      '../Images/TaalVolcano6.jpg',
+      '../Images/TaalVolcano7.jpg',
+      '../Images/TaalVolcano8.jpg',
+      '../Images/TaalVolcano9.jpg',
+      '../Images/TaalVolcano10.jpg',
+    ],
+    tubbataha: [
+      '../Images/Homeimage1.jpeg',
+      '../Images/Homeimage2.jpeg',
+      '../Images/Homeimage3.jpeg',
+      '../Images/Homeimage4.jpeg',
+      '../Images/Homeimage5.jpeg',
+      '../Images/Homeimage6.jpeg',
+      '../Images/Homeimage7.jpeg',
+      '../Images/Homeimage8.jpeg',
+      '../Images/Homeimage9.jpeg',
+      '../Images/Homeimage10.jpeg',
+      '../Images/Homeimage11.jpeg'
+    ],
+    boracay: [
+      '../Images/boracay.jpeg',
+      '../Images/boracay1.jpeg',
+      '../Images/boracay2.jpeg',
+      '../Images/boracay3.jpeg',
+      '../Images/boracay4.jpeg',
+      '../Images/boracay5.jpeg',
+      '../Images/boracay6.jpeg',
+      '../Images/boracay7.jpeg',
+      '../Images/boracay8.jpeg',
+      '../Images/boracay9.jpeg',
+      '../Images/boracay10.jpeg'
+    ],
+  };
+  
+  wonders.forEach(wonder => {
+    wonder.addEventListener("click", () => {
+      const key = wonder.getAttribute("data-wonder");
+      gallery.innerHTML = "";
+
+      if (wonderImages[key]) {
+        currentImages = wonderImages[key];
+        currentIndex = 0;
+
+        currentImages.forEach((src, index) => {
+          const img = document.createElement("img");
+          img.src = src;
+
+          img.addEventListener("click", () => {
+            modal.style.display = "block";
+            modalImg.src = src;
+            currentIndex = index;
+          });
+
+          gallery.appendChild(img);
+        });
+      }
+    });
+  });
+
+  // Trigger first wonder on page load
+  wonders[0].click();
+
+  // Modal navigation
+  closeBtn.onclick = () => (modal.style.display = "none");
+
+  modal.onclick = event => {
+    if (event.target === modal) modal.style.display = "none";
+  };
+
+  prevBtn.onclick = () => {
+    if (currentImages.length > 0) {
+      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      modalImg.src = currentImages[currentIndex];
+    }
+  };
+
+  nextBtn.onclick = () => {
+    if (currentImages.length > 0) {
+      currentIndex = (currentIndex + 1) % currentImages.length;
+      modalImg.src = currentImages[currentIndex];
+    }
+  };
+});
+
+
+
+</script>
+
+</body>
+</html>
